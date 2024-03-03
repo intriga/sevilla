@@ -9,9 +9,10 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
-    <!-- Fonts -->
+    <!-- Fonts 
     <link rel="dns-prefetch" href="//fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
+    -->
 
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
@@ -34,9 +35,9 @@
         ])!!}
     </script>
 @endif
-<body>
+<body class="sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed" id="app">
     
-    <div id="app"></div>
+    
     
 </body>
 </html>
