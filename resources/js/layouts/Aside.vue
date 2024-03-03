@@ -25,12 +25,20 @@
                 <!-- Add icons to the links using the .nav-icon class
                     with font-awesome or any other icon font library -->
                     <li class="nav-item">
-                        <a href="#" class="nav-link">
+                        <router-link :to="{name: 'dashboard'}" class="nav-link">
                             <i class="nav-icon fas fa-tachometer-alt"></i>
                             <p>
                                 Dashboard
                             </p>
-                        </a>
+                        </router-link>
+                    </li>
+                    <li class="nav-item">
+                        <router-link :to="{name: 'posts'}" class="nav-link">
+                            <i class="nav-icon fas fa-pen-square"></i>
+                            <p>
+                                Posts
+                            </p>
+                        </router-link>
                     </li>
                     <li class="nav-item">
                         <a href="#" class="nav-link" @click="logout">

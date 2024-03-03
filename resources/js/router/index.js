@@ -6,6 +6,8 @@ import Register from '../pages/Register.vue';
 import Login from '../pages/Login.vue';
 import Dashboard from '../pages/Dashboard.vue';
 
+import Posts from '../posts/Index.vue';
+
 export const routes = [
     {
         name: 'home',
@@ -26,6 +28,13 @@ export const routes = [
         name: 'dashboard',
         path: '/dashboard',
         component: Dashboard
+    },
+
+    // posts
+    {
+        name: 'posts',
+        path: '/posts',
+        component: Posts
     }
 ];
 

@@ -1,32 +1,32 @@
 <template>
-    <div class="dark-mode">
+<div class="dark-mode">
    
-        <!-- Site wrapper -->
-        <div class="wrapper">
-            <!-- Navbar -->            
-            <Navbar></Navbar>
-            <!-- /.navbar -->
+   <!-- Site wrapper -->
+   <div class="wrapper">
+       <!-- Navbar -->            
+       <Navbar></Navbar>
+       <!-- /.navbar -->
 
-            <!-- Main Sidebar Container -->
-            <Aside></Aside>
+       <!-- Main Sidebar Container -->
+       <Aside></Aside>
 
-            <!-- Content Wrapper. Contains page content -->
-            <div class="content-wrapper">
+       <!-- Content Wrapper. Contains page content -->
+       <div class="content-wrapper">
             <!-- Content Header (Page header) -->
                 <section class="content-header">
-                <div class="container-fluid">
-                <div class="row mb-2">
-                <div class="col-sm-6">
-                <h1>Blank Page</h1>
-                </div>
-                <div class="col-sm-6">
-                <ol class="breadcrumb float-sm-right">
-                    <li class="breadcrumb-item"><a href="#">Home</a></li>
-                    <li class="breadcrumb-item active">Blank Page</li>
-                </ol>
-                </div>
-                </div>
-                </div><!-- /.container-fluid -->
+                    <div class="container-fluid">
+                    <div class="row mb-2">
+                    <div class="col-sm-6">
+                    <h1>Blank Page</h1>
+                    </div>
+                    <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item active">Blank Page</li>
+                    </ol>
+                    </div>
+                    </div>
+                    </div><!-- /.container-fluid -->
                 </section>
 
                 <!-- Main content -->
@@ -47,7 +47,7 @@
                             </div>
                         </div>
                         <div class="card-body">
-                            Start creating your amazing application!
+                            POSTS
                         </div>
                         <!-- /.card-body -->
                         <div class="card-footer">
@@ -63,26 +63,31 @@
             </div>
             <!-- /.content-wrapper -->
 
-            <Footer></Footer>
+       <Footer></Footer>
 
 
-        </div>
-    <!-- ./wrapper -->
+   </div>
+<!-- ./wrapper -->
 
-    </div>
+</div>
 </template>
 
 <script>
     import Navbar from '../layouts/Navbar.vue'  
     import Aside from '../layouts/Aside.vue'  
     import Footer from '../layouts/Footer.vue'  
+
+
+    import axios from 'axios';
+
+
     export default {
         components: { Navbar, Aside, Footer },
 
-        name: "Dashboard",
+                
         data() {
             return {
-                name: null,
+                posts: []
             }
         },
         created() {
@@ -95,7 +100,22 @@
                 window.location.href = "/login";
             }
             next();
+        },
+
+        mounted() {
+            this.getPosts();
+        },
+
+        methods: {
+            getPosts() {
+                axios.get('http://127.0.0.1:8000/api/posts').then(res => {
+                    this.posts = res.data;
+                    //console.log(this.posts);
+                });
+            },
         }
+        
+
         
     }
 </script>
