@@ -6,7 +6,7 @@ import Register from '../pages/Register.vue';
 import Login from '../pages/Login.vue';
 import Dashboard from '../pages/Dashboard.vue';
 
-import Posts from '../posts/Index.vue';
+import Posts from '../posts/Posts.vue';
 
 export const routes = [
     {
